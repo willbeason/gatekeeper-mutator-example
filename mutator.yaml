@@ -3,6 +3,11 @@ kind: AssignMetadata
 metadata:
   name: foo-label
 spec:
+  match:
+    scope: Cluster
+    kinds:
+    - apiGroups: ["*"]
+      kinds: ["Namespace"]
   location: "metadata.labels.foo"
   parameters:
     assign:
