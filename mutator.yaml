@@ -3,13 +3,11 @@ kind: AssignMetadata
 metadata:
   name: foo-label
 spec:
-  match:
-    scope: Cluster
-    kinds:
-    - apiGroups: ["*"]
-      kinds: ["Namespace"]
+  applyTo:
+  - groups: [""]
+    kinds: ["Namespace"]
+    versions: ["v1"]
   location: "metadata.labels.foo"
   parameters:
     assign:
       value:  "qux"
-
